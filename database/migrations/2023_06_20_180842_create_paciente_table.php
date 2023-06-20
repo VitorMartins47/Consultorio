@@ -11,16 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('consulta', function (Blueprint $table) {
+        Schema::create('paciente', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('nome');
-            $table->string('email');
-            $table->integer('fone');
-            $table->text('mensagem');
-            $table->date('data');   
-            $table->foreign('id_paciente')->references('id')->on('paciente');
-            $table->foreign('id_medico')->references('id')->on('medico');   
+            $table->string('rua');
+            $table->string('complemento');
+            $table->string('bairro');
+            $table->integer('cell');
+            $table->integer('cpf');
+            $table->date('nacimento');
+            $table->string('rg');
+            
+        
         });
     }
 
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('consulta');
+        Schema::dropIfExists('paciente');
     }
 };

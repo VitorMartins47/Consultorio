@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <table>
-        <thead>
+    <thead>
             <td>Id</td>
             <td>Nome</td>
             <td>Email</td>
@@ -28,6 +28,7 @@
                      "</tr>";
 
             }
+            ?>
     </tbody>
 
 

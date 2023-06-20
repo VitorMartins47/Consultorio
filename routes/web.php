@@ -32,6 +32,8 @@ Route::middleware([
     })->name('consultasAgendadas');
 
     
+
+    
 });
 
 Route::get('/home', function(){
@@ -51,7 +53,9 @@ Route::get('/pacientes', function(){
     return view('consultorio/pacientes');
 });
 
-Route::get('/consulta', 'consultaController@exibirform');
+Route::get('/consulta', function(){
+    return view('consultorio/consulta');
+});
 Route::post('/consulta', 'consultaController@processarform');
 
 Route::get('/contato', function(){
