@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\consultaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::middleware([
     Route::get('/consultasAgendadas', function () {
         return view('consultasAgendadas');
     })->name('consultasAgendadas');
+
+    
 });
 
 Route::get('/home', function(){
@@ -48,9 +51,8 @@ Route::get('/pacientes', function(){
     return view('consultorio/pacientes');
 });
 
-Route::get('/consulta', function(){
-    return view('consultorio/consulta');
-});
+Route::get('/consulta', 'consultaController@exibirform');
+Route::post('/consulta', 'consultaController@processarform');
 
 Route::get('/contato', function(){
     return view('consultorio/contato');
